@@ -205,6 +205,7 @@ a:focus-visible {
   flex-wrap: wrap;
   gap: 0.6rem;
   align-items: center;
+  justify-content: center;
 }
 
 .hero__meta {
