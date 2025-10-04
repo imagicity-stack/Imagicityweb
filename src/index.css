@@ -38,17 +38,6 @@ body {
   overflow-x: hidden;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at 20% 10%, rgba(255, 214, 0, 0.12), transparent 50%),
-    radial-gradient(circle at 80% 10%, rgba(255, 45, 99, 0.12), transparent 60%);
-  opacity: 0.6;
-  filter: blur(120px);
-  z-index: -2;
-}
-
 a {
   color: inherit;
 }
