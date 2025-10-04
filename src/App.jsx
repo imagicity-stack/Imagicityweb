@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import GradualBlur from './components/GradualBlur.jsx';
 import GooeyNav from './components/GooeyNav.jsx';
 import LiquidCursor from './components/LiquidCursor.jsx';
 import Hero from './sections/Hero.jsx';
@@ -22,24 +21,6 @@ const App = () => {
   return (
     <div className="page">
       <LiquidCursor />
-      <GradualBlur
-        target="page"
-        position="top"
-        height="14rem"
-        strength={3.8}
-        divCount={7}
-        opacity={0.95}
-        curve="bezier"
-      />
-      <GradualBlur
-        target="page"
-        position="bottom"
-        height="18rem"
-        strength={4.2}
-        divCount={7}
-        opacity={0.95}
-        curve="bezier"
-      />
       <header className="page__header">
         <GooeyNav items={menuItems} colors={[1, 2, 3, 4, 5, 6]} />
       </header>
