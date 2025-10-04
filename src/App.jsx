@@ -1,4 +1,5 @@
 import LiquidBackground from './components/LiquidBackground.jsx';
+import PixelBlast from './components/PixelBlast.jsx';
 import RotatingText from './components/RotatingText.jsx';
 import ScrollStack from './components/ScrollStack.jsx';
 import MasonryGallery from './components/MasonryGallery.jsx';
@@ -109,6 +110,7 @@ const App = () => {
   return (
     <div className="page">
       <LiquidBackground />
+      <PixelBlast />
       <header className="page__header">
         <div className="page__header-inner">
           <span className="page__brand">Imagicity</span>
@@ -138,7 +140,8 @@ const App = () => {
         <section className="section about" id="about" aria-labelledby="about-heading">
           <div className="section__header">
             <span className="section__eyebrow">About</span>
-            <h2 className="section__title" id="about-heading">We choreograph magnetic brand worlds</h2>
+            <h2 className="section__title" id="about-heading">About</h2>
+            <p className="section__subtitle">We choreograph magnetic brand worlds.</p>
           </div>
           <div className="about__content">
             <p>
@@ -157,9 +160,10 @@ const App = () => {
         <section className="section services" id="services" aria-labelledby="services-heading">
           <div className="section__header">
             <span className="section__eyebrow">Services</span>
-            <h2 className="section__title" id="services-heading">Momentum engines with a pulse</h2>
+            <h2 className="section__title" id="services-heading">Services</h2>
             <p className="section__subtitle">
-              We build living systems that shimmer, swirl, and surge with your audience.
+              Momentum engines with a pulse. We build living systems that shimmer, swirl, and surge with your
+              audience.
             </p>
           </div>
           <p className="services__manifesto">
@@ -173,15 +177,17 @@ const App = () => {
         <section className="section work" id="work" aria-labelledby="work-heading">
           <div className="section__header">
             <span className="section__eyebrow">Selected Work</span>
-            <h2 className="section__title" id="work-heading">Signals we set loose</h2>
+            <h2 className="section__title" id="work-heading">Work</h2>
+            <p className="section__subtitle">Signals we set loose.</p>
           </div>
           <MasonryGallery items={workProjects} />
         </section>
 
         <section className="section blog" id="blog" aria-labelledby="blog-heading">
           <div className="section__header">
-            <span className="section__eyebrow">Insights</span>
-            <h2 className="section__title" id="blog-heading">Field notes from the future</h2>
+            <span className="section__eyebrow">Blog</span>
+            <h2 className="section__title" id="blog-heading">Blog</h2>
+            <p className="section__subtitle">Field notes from the future.</p>
           </div>
           <BlogCarousel items={blogPosts} />
         </section>
@@ -189,8 +195,9 @@ const App = () => {
         <section className="section contact" id="contact" aria-labelledby="contact-heading">
           <div className="contact__panel">
             <div className="contact__intro">
-              <p className="contact__eyebrow">Partnerships</p>
-              <h2 className="contact__title" id="contact-heading">Let&apos;s Connect Today</h2>
+              <p className="contact__eyebrow">Contact</p>
+              <h2 className="contact__title" id="contact-heading">Contact</h2>
+              <p className="contact__subtitle">Let&apos;s connect today.</p>
               <p>
                 Tell us about the future you&apos;re chasing and we&apos;ll shape the momentum plan together.
               </p>
