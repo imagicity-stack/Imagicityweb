@@ -1,0 +1,111 @@
+.scroll-stack {
+  position: relative;
+  display: grid;
+  gap: clamp(1.8rem, 4vw, 2.6rem);
+  padding: clamp(1rem, 3vw, 1.8rem) 0 clamp(4rem, 12vw, 6rem);
+}
+
+.scroll-stack::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(248, 250, 180, 0.16), transparent 35%, transparent 65%, rgba(61, 218, 215, 0.1));
+  pointer-events: none;
+  z-index: -2;
+}
+
+.scroll-stack__item {
+  position: sticky;
+  top: calc(clamp(5rem, 18vh, 8rem) + var(--stack-index, 0) * clamp(0.8rem, 2vw, 1.4rem));
+  padding: clamp(2rem, 5vw, 2.8rem);
+  border-radius: 26px;
+  border: 1px solid rgba(61, 218, 215, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 28px 60px rgba(15, 39, 37, 0.12);
+  display: grid;
+  gap: 1.1rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.scroll-stack__item h3 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3.5vw, 1.9rem);
+  letter-spacing: -0.01em;
+}
+
+.scroll-stack__item p {
+  margin: 0;
+}
+
+.scroll-stack__header {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 1.6rem);
+}
+
+.scroll-stack__index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 18px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(15, 39, 37, 0.8);
+  background: linear-gradient(135deg, rgba(61, 218, 215, 0.18), rgba(240, 135, 135, 0.25));
+  box-shadow: inset 0 0 0 1px rgba(61, 218, 215, 0.2);
+}
+
+.scroll-stack__titles p {
+  color: rgba(15, 39, 37, 0.65);
+  font-size: 0.95rem;
+}
+
+.scroll-stack__description {
+  color: rgba(15, 39, 37, 0.72);
+  font-size: 1.02rem;
+}
+
+.scroll-stack__highlights {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+  color: rgba(15, 39, 37, 0.7);
+  font-size: 0.95rem;
+}
+
+.scroll-stack__glow {
+  position: absolute;
+  inset: -35% -40% 40% -40%;
+  background: radial-gradient(circle at 20% 20%, rgba(61, 218, 215, 0.32), transparent 65%),
+    radial-gradient(circle at 80% 80%, rgba(240, 135, 135, 0.35), transparent 65%),
+    radial-gradient(circle at 50% 0%, rgba(255, 199, 167, 0.4), transparent 70%);
+  filter: blur(70px);
+  opacity: 0.9;
+  z-index: -1;
+  transform: scale(1.05);
+  animation: scroll-stack-orbit 18s linear infinite;
+}
+
+@keyframes scroll-stack-orbit {
+  0% {
+    transform: rotate(0deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.05);
+  }
+}
+
+@media (max-width: 720px) {
+  .scroll-stack__item {
+    top: auto;
+    position: relative;
+  }
+}

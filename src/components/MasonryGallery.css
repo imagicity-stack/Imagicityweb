@@ -1,0 +1,23 @@
+.masonry {
+  column-count: 3;
+  column-gap: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+.masonry__item {
+  display: grid;
+  gap: 0.8rem;
+  break-inside: avoid;
+  margin-bottom: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+@media (max-width: 1024px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .masonry {
+    column-count: 1;
+  }
+}
