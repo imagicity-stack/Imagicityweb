@@ -1,0 +1,60 @@
+.liquid-ether {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  background: #ffffff;
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+}
+
+.liquid-ether__layer {
+  position: absolute;
+  top: var(--pointer-y);
+  left: var(--pointer-x);
+  width: 48vmax;
+  height: 48vmax;
+  transform: translate(-50%, -50%);
+  filter: blur(100px);
+  opacity: 0.8;
+  transition: opacity 400ms ease;
+  mix-blend-mode: multiply;
+  animation: liquid-oscillate 18s ease-in-out infinite;
+}
+
+.liquid-ether__layer--a {
+  background: radial-gradient(circle at center, rgba(61, 218, 215, 0.32), transparent 65%);
+}
+
+.liquid-ether__layer--b {
+  background: radial-gradient(circle at center, rgba(240, 135, 135, 0.25), transparent 60%);
+  animation-delay: -6s;
+}
+
+.liquid-ether__layer--c {
+  background: radial-gradient(circle at center, rgba(248, 250, 180, 0.22), transparent 62%);
+  animation-delay: -12s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-ether__layer {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+  }
+}
+
+@keyframes liquid-oscillate {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  33% {
+    transform: translate(calc(-50% - 5vmax), calc(-50% - 3vmax)) scale(1.1);
+  }
+  66% {
+    transform: translate(calc(-50% + 6vmax), calc(-50% + 4vmax)) scale(0.92);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

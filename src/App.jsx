@@ -1,51 +1,32 @@
-import { useMemo } from 'react';
-import GooeyNav from './components/GooeyNav.jsx';
-import LiquidCursor from './components/LiquidCursor.jsx';
-import Hero from './sections/Hero.jsx';
-import About from './sections/About.jsx';
-import Services from './sections/Services.jsx';
+import LiquidBackground from './components/LiquidBackground.jsx';
+import RotatingText from './components/RotatingText.jsx';
 
 const App = () => {
-  const menuItems = useMemo(
-    () => [
-      { label: 'Home', href: '#home' },
-      { label: 'About Us', href: '#about' },
-      { label: 'Services', href: '#services' },
-      { label: 'Works', href: '#works' },
-      { label: 'Blogs', href: '#blogs' },
-      { label: 'Contact Us', href: '#contact' }
-    ],
-    []
-  );
-
   return (
     <div className="page">
-      <LiquidCursor />
+      <LiquidBackground />
       <header className="page__header">
-        <GooeyNav items={menuItems} colors={[1, 2, 3, 4, 5, 6]} />
+        <div className="page__header-inner">
+          <span className="page__brand">Imagicity</span>
+          <nav className="page__nav" aria-label="Primary">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
       </header>
-      <main className="page__content">
-        <Hero />
-        <About />
-        <Services />
-        <section id="works" className="section placeholder">
-          <div className="section__label">Works</div>
-          <p>Case studies portal arriving soon — curated narratives of immersive launches, installations, and films.</p>
-        </section>
-        <section id="blogs" className="section placeholder">
-          <div className="section__label">Blogs</div>
-          <p>Insights, trend reports, and process logs from the Imagicity studio.</p>
-        </section>
-        <section id="contact" className="section placeholder">
-          <div className="section__label">Contact</div>
-          <p>
-            Ready to make something magnetic? <a href="mailto:hello@imagicity.co">hello@imagicity.co</a>
-          </p>
+      <main className="page__main" id="home">
+        <section className="hero" aria-labelledby="hero-heading">
+          <div className="hero__card">
+            <span className="hero__eyebrow">We create</span>
+            <h1 className="hero__heading" id="hero-heading">
+              <RotatingText words={["brands", "strategies", "websites", "campaigns"]} />
+            </h1>
+            <p className="hero__meta">Creative marketing for teams that want clarity, emotion, and measurable momentum.</p>
+          </div>
         </section>
       </main>
-      <footer className="page__footer">
-        <span>© {new Date().getFullYear()} Imagicity Studio. Crafted with imagination &amp; intention.</span>
-      </footer>
     </div>
   );
 };
