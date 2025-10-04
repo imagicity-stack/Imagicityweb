@@ -10,7 +10,7 @@ const PixelBlast = ({ shards = 42 }) => {
         delay: Math.random() * 4,
         duration: 5.5 + Math.random() * 4.5,
         size: 12 + Math.random() * 22,
-        hue: 160 + Math.random() * 90,
+        hue: (350 + Math.random() * 40) % 360,
       })),
     [shards]
   );

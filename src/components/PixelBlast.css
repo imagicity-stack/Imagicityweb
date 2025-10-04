@@ -12,9 +12,9 @@
   content: '';
   position: absolute;
   inset: -25%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.32), transparent 72%);
+  background: radial-gradient(circle at center, rgba(255, 102, 102, 0.45), transparent 72%);
   filter: blur(120px);
-  opacity: 0.5;
+  opacity: 0.65;
   animation: pixel-blast-pulse 16s ease-in-out infinite;
 }
 
@@ -25,8 +25,12 @@
   width: var(--size);
   height: var(--size);
   border-radius: 22%;
-  background: conic-gradient(from 45deg, hsla(var(--hue), 82%, 72%, 0.9), hsla(calc(var(--hue) + 40), 86%, 64%, 0.65));
-  box-shadow: 0 0 12px hsla(var(--hue), 90%, 72%, 0.45), 0 0 24px hsla(var(--hue), 88%, 78%, 0.35);
+  background: conic-gradient(
+    from 45deg,
+    hsla(var(--hue), 90%, 68%, 0.95),
+    hsla(calc((var(--hue) + 25) % 360), 100%, 62%, 0.7)
+  );
+  box-shadow: 0 0 14px hsla(var(--hue), 100%, 70%, 0.55), 0 0 32px hsla(var(--hue), 90%, 72%, 0.45);
   transform: rotate(var(--angle)) translateX(0) scale(0.35);
   transform-origin: center;
   opacity: 0;
@@ -40,9 +44,9 @@
   position: absolute;
   inset: 30%;
   border-radius: inherit;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 210, 210, 0.65);
   filter: blur(6px);
-  opacity: 0.6;
+  opacity: 0.75;
 }
 
 @keyframes pixel-blast-shoot {
