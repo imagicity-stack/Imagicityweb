@@ -222,10 +222,13 @@ const App = () => {
         </section>
       </main>
       <footer className="page__footer" aria-label="Legal">
-        <nav className="page__footer-nav">
-          <a href="#">Terms &amp; Conditions</a>
-          <a href="#">Privacy Policy</a>
-        </nav>
+        <div className="page__footer-inner">
+          <p className="page__footer-copy">Imagicity 2025 all right reserved</p>
+          <nav className="page__footer-nav">
+            <a href="#">Terms &amp; Conditions</a>
+            <a href="#">Privacy Policy</a>
+          </nav>
+        </div>
       </footer>
     </div>
   );
