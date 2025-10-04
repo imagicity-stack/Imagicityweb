@@ -1,0 +1,22 @@
+.pixel-blast-container {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  mix-blend-mode: screen;
+}
+
+.pixel-blast-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  filter: saturate(115%) drop-shadow(0 0 60px rgba(255, 122, 140, 0.3));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-blast-container canvas {
+    animation: none !important;
+  }
+}

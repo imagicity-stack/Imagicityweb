@@ -1,4 +1,5 @@
 import LiquidBackground from './components/LiquidBackground.jsx';
+import PixelBlast from './components/PixelBlast.jsx';
 import RotatingText from './components/RotatingText.jsx';
 import ScrollStack from './components/ScrollStack.jsx';
 import MasonryGallery from './components/MasonryGallery.jsx';
@@ -109,6 +110,7 @@ const App = () => {
   return (
     <div className="page">
       <LiquidBackground />
+      <PixelBlast />
       <header className="page__header">
         <div className="page__header-inner">
           <span className="page__brand">Imagicity</span>
@@ -137,19 +139,14 @@ const App = () => {
 
         <section className="section about" id="about" aria-labelledby="about-heading">
           <div className="section__header">
-            <span className="section__eyebrow">About</span>
-            <h2 className="section__title" id="about-heading">We choreograph magnetic brand worlds</h2>
+            <span className="section__eyebrow">About Us</span>
+            <h2 className="section__title" id="about-heading">Fueling brands that dare to grow.</h2>
+            <p className="section__subtitle">Strategy, creativity, and execution that actually move the needle.</p>
           </div>
           <div className="about__content">
             <p>
-              We are a creative marketing agency blending strategic intelligence with sensory storytelling.
-              From sonic identities to spatial experiences, our team fuses data, design, and daring imagination
-              to transform brands into living ecosystems.
-            </p>
-            <p>
-              Every launch is scored like a performance: layered moments, crescendoing emotion, and a final ovation
-              measured in growth. We collaborate with founders, futurists, and fearless teams to turn their vision
-              into an unforgettable experience.
+              We’re not here to play safe—we’re here to make your brand stand out, scale fast, and own its space with sharp
+              strategy and unapologetic creativity.
             </p>
           </div>
         </section>
@@ -157,31 +154,34 @@ const App = () => {
         <section className="section services" id="services" aria-labelledby="services-heading">
           <div className="section__header">
             <span className="section__eyebrow">Services</span>
-            <h2 className="section__title" id="services-heading">Momentum engines with a pulse</h2>
-            <p className="section__subtitle">
-              We build living systems that shimmer, swirl, and surge with your audience.
-            </p>
+            <h2 className="section__title" id="services-heading">We Build Brands That Break the Internet.</h2>
+            <p className="section__subtitle">Strategy that bites. Creativity that sells.</p>
           </div>
           <p className="services__manifesto">
-            We’re not your average marketing squad. We’re the storm that shakes up the market. We mix mad creativity with
-            razor sharp strategy to make brands roar louder, shine brighter, and sell harder. No fluff, no boring playbook.
-            Just pure marketing firepower built to make people stop, stare, and remember.
+            We don’t just market—we engineer obsession. From viral campaigns to full-funnel growth systems, we turn clicks
+            into cults and brands into legends.
           </p>
           <ScrollStack items={serviceLayers} />
         </section>
 
         <section className="section work" id="work" aria-labelledby="work-heading">
           <div className="section__header">
-            <span className="section__eyebrow">Selected Work</span>
-            <h2 className="section__title" id="work-heading">Signals we set loose</h2>
+            <span className="section__eyebrow">Work</span>
+            <h2 className="section__title" id="work-heading">Our Work Speaks Louder Than Buzzwords.</h2>
+            <p className="section__subtitle">Real brands. Real growth. Real impact.</p>
           </div>
+          <p className="work__intro">
+            Every project we touch turns into a case study in bold moves and smart execution. We don’t chase trends—we set
+            them, delivering results that make competitors sweat.
+          </p>
           <MasonryGallery items={workProjects} />
         </section>
 
         <section className="section blog" id="blog" aria-labelledby="blog-heading">
           <div className="section__header">
-            <span className="section__eyebrow">Insights</span>
-            <h2 className="section__title" id="blog-heading">Field notes from the future</h2>
+            <span className="section__eyebrow">Blog</span>
+            <h2 className="section__title" id="blog-heading">Brain Fuel for the Bold.</h2>
+            <p className="section__subtitle">Insights, trends, and hot takes that actually matter.</p>
           </div>
           <BlogCarousel items={blogPosts} />
         </section>
@@ -189,8 +189,9 @@ const App = () => {
         <section className="section contact" id="contact" aria-labelledby="contact-heading">
           <div className="contact__panel">
             <div className="contact__intro">
-              <p className="contact__eyebrow">Partnerships</p>
-              <h2 className="contact__title" id="contact-heading">Let&apos;s Connect Today</h2>
+              <p className="contact__eyebrow">Contact</p>
+              <h2 className="contact__title" id="contact-heading">Contact</h2>
+              <p className="contact__subtitle">Let&apos;s connect today.</p>
               <p>
                 Tell us about the future you&apos;re chasing and we&apos;ll shape the momentum plan together.
               </p>
