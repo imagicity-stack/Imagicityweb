@@ -1,0 +1,38 @@
+.rotating-text {
+  position: relative;
+  display: inline-grid;
+  align-items: center;
+  justify-items: start;
+  min-width: 12ch;
+  font-weight: 600;
+  color: #0f2725;
+  text-transform: lowercase;
+}
+
+.rotating-text__item {
+  grid-area: 1 / 1;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.4rem 0.25rem;
+  border-radius: 0.75rem;
+  background: rgba(61, 218, 215, 0.14);
+  color: #0f2725;
+  opacity: 0;
+  transform: translateY(12px) rotate(2deg);
+  filter: blur(6px);
+  transition: opacity 420ms ease, transform 420ms ease, filter 420ms ease, background 420ms ease;
+}
+
+.rotating-text__item.is-active {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+  filter: blur(0);
+  background: rgba(240, 135, 135, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rotating-text__item,
+  .rotating-text__item.is-active {
+    transition: none;
+  }
+}
