@@ -1,15 +1,15 @@
 import TextRotator from '../components/TextRotator.jsx';
-import logo from '../assets/imagicity-logo.svg';
 
 const Hero = () => {
   return (
     <section id="home" className="section hero">
       <div className="hero__grid">
         <div className="hero__intro">
-          <img src={logo} alt="Imagicity logo" className="hero__logo" />
           <div className="hero__headline">
             <span className="hero__tag">We help brands in</span>
-            <TextRotator phrases={['Strategizing', 'Branding', 'Designing', 'Creating']} />
+            <h1 className="hero__title">
+              <TextRotator phrases={['Strategizing', 'Branding', 'Designing', 'Creating']} />
+            </h1>
           </div>
           <p className="hero__description">
             Imagicity is a future-forward creative agency crafting immersive brand universes, blurring the line between

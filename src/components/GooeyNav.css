@@ -29,6 +29,11 @@
 
 .gooey-nav-container {
   position: relative;
+  padding: 0.35rem;
+  border-radius: 999px;
+  background: rgba(3, 29, 31, 0.55);
+  box-shadow: 0 18px 40px rgba(3, 18, 20, 0.45);
+  max-width: min(960px, 100%);
 }
 
 .gooey-nav-container nav {
@@ -46,7 +51,6 @@
   position: relative;
   z-index: 3;
   color: var(--surface-100);
-  text-shadow: 0 1px 1px hsl(205deg 30% 10% / 0.2);
 }
 
 .gooey-nav-container nav ul li {
@@ -54,22 +58,25 @@
   position: relative;
   cursor: pointer;
   transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease;
+    background-color 0.4s ease,
+    color 0.4s ease,
+    box-shadow 0.4s ease;
   box-shadow: 0 0 0.5px 1.5px transparent;
-  color: var(--surface-100);
+  color: rgba(245, 245, 241, 0.82);
 }
 
 .gooey-nav-container nav ul li a {
   display: inline-block;
-  padding: 0.6em 1.2em;
+  padding: 0.62em 1.4em;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: 'Plus Jakarta Sans', 'Space Grotesk', system-ui, sans-serif;
+  text-decoration: none;
 }
 
 .gooey-nav-container nav ul li:focus-within:has(:focus-visible) {
-  box-shadow: 0 0 0.5px 1.5px white;
+  box-shadow: 0 0 0.5px 1.5px rgba(248, 250, 180, 0.9);
 }
 
 .gooey-nav-container nav ul li::after {
@@ -77,16 +84,15 @@
   position: absolute;
   inset: 0;
   border-radius: 10px;
-  background: var(--surface-100);
+  background: linear-gradient(135deg, rgba(61, 218, 215, 0.2), rgba(255, 199, 167, 0.2));
   opacity: 0;
-  transform: scale(0);
-  transition: all 0.3s ease;
+  transform: scale(0.85);
+  transition: all 0.45s cubic-bezier(0.22, 0.9, 0.26, 1);
   z-index: -1;
 }
 
 .gooey-nav-container nav ul li.active {
   color: var(--surface-900);
-  text-shadow: none;
 }
 
 .gooey-nav-container nav ul li.active::after {
@@ -108,10 +114,12 @@
 }
 
 .gooey-nav-container .effect.text {
-  color: var(--surface-100);
-  transition: color 0.3s ease;
+  color: rgba(248, 250, 180, 0.75);
+  transition: color 0.45s ease;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: 'Plus Jakarta Sans', 'Space Grotesk', system-ui, sans-serif;
 }
 
 .gooey-nav-container .effect.text.active {
@@ -119,8 +127,8 @@
 }
 
 .gooey-nav-container .effect.filter {
-  filter: blur(7px) contrast(100) blur(0);
-  mix-blend-mode: lighten;
+  filter: blur(10px) saturate(1.1) contrast(115%);
+  mix-blend-mode: screen;
 }
 
 .gooey-nav-container .effect.filter::before {
@@ -135,22 +143,19 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--surface-100);
-  transform: scale(0);
+  background: radial-gradient(circle at 30% 30%, rgba(61, 218, 215, 0.8), rgba(255, 199, 167, 0.9));
+  transform: scale(0.4);
   opacity: 0;
   z-index: -1;
   border-radius: 100vw;
+  transition:
+    transform 0.6s cubic-bezier(0.19, 0.77, 0.2, 1.02),
+    opacity 0.55s ease;
 }
 
 .gooey-nav-container .effect.active::after {
-  animation: pill 0.3s ease both;
-}
-
-@keyframes pill {
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  transform: scale(1);
+  opacity: 0.95;
 }
 
 .particle,
@@ -168,13 +173,13 @@
   position: absolute;
   top: calc(50% - 8px);
   left: calc(50% - 8px);
-  animation: particle calc(var(--time)) ease 1 -350ms;
+  animation: particle calc(var(--time)) ease 1 -380ms;
 }
 
 .point {
   background: var(--color);
   opacity: 1;
-  animation: point calc(var(--time)) ease 1 -350ms;
+  animation: point calc(var(--time)) ease 1 -380ms;
 }
 
 @keyframes particle {

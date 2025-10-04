@@ -36,11 +36,45 @@ const App = () => {
           <div className="section__label">Blogs</div>
           <p>Insights, trend reports, and process logs from the Imagicity studio.</p>
         </section>
-        <section id="contact" className="section placeholder">
+        <section id="contact" className="section contact">
           <div className="section__label">Contact</div>
-          <p>
-            Ready to make something magnetic? <a href="mailto:hello@imagicity.co">hello@imagicity.co</a>
-          </p>
+          <div className="contact__grid">
+            <div className="contact__intro">
+              <strong className="contact__headline">Let&apos;s Connect Today</strong>
+              <p>
+                Share a few details about your next bold move and we&apos;ll map the path from spark to launch within one
+                business day.
+              </p>
+            </div>
+            <form className="contact__form" onSubmit={event => event.preventDefault()} noValidate>
+              <label className="contact__field">
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Your name" autoComplete="name" required />
+              </label>
+              <label className="contact__field">
+                <span>Email</span>
+                <input type="email" name="email" placeholder="you@example.com" autoComplete="email" required />
+              </label>
+              <label className="contact__field">
+                <span>Phone Number</span>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="(+00) 123 456 789"
+                  autoComplete="tel"
+                  inputMode="tel"
+                  required
+                />
+              </label>
+              <label className="contact__field contact__field--message">
+                <span>Your Message</span>
+                <textarea name="message" placeholder="Tell us about your project" rows="4" required />
+              </label>
+              <button type="submit" className="button button--primary contact__submit">
+                Submit
+              </button>
+            </form>
+          </div>
         </section>
       </main>
       <footer className="page__footer">
