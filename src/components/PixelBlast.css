@@ -1,0 +1,88 @@
+.pixel-blast {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  display: block;
+  mix-blend-mode: screen;
+}
+
+.pixel-blast::before {
+  content: '';
+  position: absolute;
+  inset: -25%;
+  background: radial-gradient(circle at center, rgba(255, 102, 102, 0.45), transparent 72%);
+  filter: blur(120px);
+  opacity: 0.65;
+  animation: pixel-blast-pulse 16s ease-in-out infinite;
+}
+
+.pixel-blast span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 22%;
+  background: conic-gradient(
+    from 45deg,
+    hsla(var(--hue), 90%, 68%, 0.95),
+    hsla(calc((var(--hue) + 25) % 360), 100%, 62%, 0.7)
+  );
+  box-shadow: 0 0 14px hsla(var(--hue), 100%, 70%, 0.55), 0 0 32px hsla(var(--hue), 90%, 72%, 0.45);
+  transform: rotate(var(--angle)) translateX(0) scale(0.35);
+  transform-origin: center;
+  opacity: 0;
+  filter: saturate(120%);
+  animation: pixel-blast-shoot var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+.pixel-blast span::after {
+  content: '';
+  position: absolute;
+  inset: 30%;
+  border-radius: inherit;
+  background: rgba(255, 210, 210, 0.65);
+  filter: blur(6px);
+  opacity: 0.75;
+}
+
+@keyframes pixel-blast-shoot {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--angle)) translateX(0) scale(0.35);
+  }
+  12% {
+    opacity: 0.85;
+  }
+  55% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--angle)) translateX(var(--distance)) scale(1.05);
+  }
+}
+
+@keyframes pixel-blast-pulse {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(1);
+  }
+  45% {
+    opacity: 0.52;
+    transform: scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-blast,
+  .pixel-blast::before,
+  .pixel-blast span {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

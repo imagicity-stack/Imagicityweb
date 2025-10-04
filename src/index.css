@@ -12,6 +12,7 @@
   --ink: #0f2725;
   --muted: #5f7573;
   --border: #e4eeed;
+  --sticky-header-offset: clamp(6.5rem, 14vw, 9rem);
 }
 
 * {
@@ -51,7 +52,7 @@ a:focus-visible {
 .page__header {
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   background: #ffffff;
   border-bottom: 1px solid var(--border);
 }
@@ -122,7 +123,8 @@ a:focus-visible {
   align-items: center;
   gap: clamp(4rem, 10vw, 7rem);
   padding: clamp(4rem, 12vw, 8rem) clamp(1.5rem, 5vw, 3rem) clamp(6rem, 16vw, 10rem);
-  z-index: 1;
+  z-index: 2;
+  scroll-margin-top: var(--sticky-header-offset);
 }
 
 .section {
@@ -130,6 +132,7 @@ a:focus-visible {
   max-width: 1080px;
   display: grid;
   gap: clamp(1.8rem, 4vw, 2.6rem);
+  scroll-margin-top: calc(var(--sticky-header-offset) + 1.2rem);
 }
 
 .section__header {
@@ -168,6 +171,14 @@ a:focus-visible {
   letter-spacing: -0.01em;
 }
 
+.work__intro {
+  margin: 0;
+  max-width: 780px;
+  font-size: clamp(1.02rem, 2.4vw, 1.18rem);
+  line-height: 1.6;
+  color: rgba(15, 39, 37, 0.78);
+}
+
 .hero {
   display: flex;
   justify-content: center;
@@ -175,7 +186,8 @@ a:focus-visible {
 
 .hero__card {
   position: relative;
-  width: min(100%, 520px);
+  width: 100%;
+  max-width: clamp(520px, 60vw, 680px);
   padding: clamp(2.6rem, 6vw, 4rem);
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.88);
@@ -205,6 +217,7 @@ a:focus-visible {
   flex-wrap: wrap;
   gap: 0.6rem;
   align-items: center;
+  justify-content: center;
 }
 
 .hero__meta {
@@ -281,6 +294,13 @@ a:focus-visible {
   font-weight: 700;
 }
 
+.contact__subtitle {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  color: rgba(15, 39, 37, 0.68);
+}
+
 .contact__form {
   display: grid;
   gap: 0.8rem;
@@ -352,6 +372,10 @@ a:focus-visible {
     justify-content: center;
   }
 
+  .hero__card {
+    max-width: min(100%, 520px);
+  }
+
   .hero__heading {
     justify-content: center;
   }
@@ -359,7 +383,6 @@ a:focus-visible {
   .contact__submit {
     justify-self: stretch;
   }
-}
 
   .page__footer-inner {
     justify-content: center;
