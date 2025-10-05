@@ -20,7 +20,7 @@
   padding: clamp(2rem, 5vw, 2.8rem);
   border-radius: 26px;
   border: 1px solid rgba(255, 0, 92, 0.24);
-  background: linear-gradient(155deg, rgba(228, 54, 54, 0.18), rgba(18, 18, 18, 0.92));
+  background: linear-gradient(155deg, rgba(228, 54, 54, 0.32), rgba(18, 18, 18, 0.97));
   box-shadow: 0 28px 60px rgba(0, 0, 0, 0.62);
   display: grid;
   gap: 1.1rem;

@@ -353,15 +353,15 @@ a:focus-visible {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #080808;
-  background: linear-gradient(135deg, var(--accent-butter), rgba(255, 0, 92, 0.85));
-  box-shadow: 0 18px 30px rgba(255, 0, 92, 0.42);
+  background: var(--accent-butter);
+  box-shadow: 0 18px 30px rgba(255, 246, 0, 0.28);
   cursor: pointer;
   transition: transform 320ms ease, box-shadow 320ms ease;
 }
 
 .contact__submit:hover {
   transform: translateY(-4px);
-  box-shadow: 0 26px 44px rgba(255, 0, 92, 0.5);
+  box-shadow: 0 26px 44px rgba(255, 246, 0, 0.35);
 }
 
 @media (max-width: 720px) {

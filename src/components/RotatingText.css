@@ -17,8 +17,8 @@
   width: 100%;
   padding: 0.2rem 0.6rem 0.3rem;
   border-radius: 0.75rem;
-  background: rgba(255, 246, 0, 0.22);
-  color: #080808;
+  background: rgba(255, 246, 0, 0.65);
+  color: #ffffff;
   opacity: 0;
   transform: translateY(12px) rotate(2deg);
   filter: blur(6px);
@@ -29,7 +29,7 @@
   opacity: 1;
   transform: translateY(0) rotate(0deg);
   filter: blur(0);
-  background: rgba(255, 0, 92, 0.28);
+  background: var(--accent-aqua);
 }
 
 @media (prefers-reduced-motion: reduce) {
