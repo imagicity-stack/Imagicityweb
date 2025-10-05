@@ -1,5 +1,4 @@
 import LiquidBackground from './components/LiquidBackground.jsx';
-import PixelBlast from './components/PixelBlast.jsx';
 import RotatingText from './components/RotatingText.jsx';
 import ScrollStack from './components/ScrollStack.jsx';
 import MasonryGallery from './components/MasonryGallery.jsx';
@@ -110,7 +109,6 @@ const App = () => {
   return (
     <div className="page">
       <LiquidBackground />
-      <PixelBlast />
       <header className="page__header">
         <div className="page__header-inner">
           <span className="page__brand">Imagicity</span>
