@@ -475,8 +475,16 @@ const PixelBlast = ({
     };
 
     resize();
-    const resizeObserver = new ResizeObserver(resize);
-    resizeObserver.observe(container);
+
+    let resizeObserver;
+    let resizeListenerAttached = false;
+    if (typeof window !== 'undefined' && 'ResizeObserver' in window) {
+      resizeObserver = new window.ResizeObserver(resize);
+      resizeObserver.observe(container);
+    } else {
+      window.addEventListener('resize', resize);
+      resizeListenerAttached = true;
+    }
 
     let clickIndex = 0;
     let currentTime = 0;
@@ -549,7 +557,8 @@ const PixelBlast = ({
     return () => {
       observer?.disconnect();
       cancelAnimationFrame(rafRef.current);
-      resizeObserver.disconnect();
+      resizeObserver?.disconnect();
+      if (resizeListenerAttached) window.removeEventListener('resize', resize);
       window.removeEventListener('pointerdown', handlePointerDown);
       window.removeEventListener('pointermove', handlePointerMove);
       gl.deleteBuffer(positionBuffer);
