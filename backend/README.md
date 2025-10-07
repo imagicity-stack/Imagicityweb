@@ -19,6 +19,18 @@ support for multiple images.
 
 ## Getting Started
 
+```
+backend/
+┣ app.js
+┣ server.js
+┣ controllers/
+┣ routes/
+┣ middleware/
+┣ storage/
+┣ utils/
+┗ validators/
+```
+
 ```bash
 cd backend
 npm install
@@ -82,7 +94,7 @@ with a database layer (PostgreSQL, DynamoDB, etc.) without disrupting the route 
 
 ## Deployment Notes
 
-- The entry point is `src/server.js`.
+- The entry point is `server.js`.
 - Uploads live under `/uploads` and are served as static assets; ensure the directory is
   writable on the deployment target.
 - Elastic Beanstalk Node.js environments will pick up the `start` script automatically.
