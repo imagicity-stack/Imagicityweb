@@ -19,9 +19,9 @@
   top: calc(clamp(5rem, 18vh, 8rem) + var(--stack-index, 0) * clamp(0.8rem, 2vw, 1.4rem));
   padding: clamp(2rem, 5vw, 2.8rem);
   border-radius: 26px;
-  border: 1px solid rgba(255, 0, 92, 0.24);
-  background: linear-gradient(155deg, rgba(228, 54, 54, 0.68), rgba(8, 8, 8, 0.98));
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.62);
+  border: 1px solid rgba(255, 0, 92, 0.26);
+  background-color: rgba(8, 8, 8, 0.98);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.68);
   display: grid;
   gap: 1.1rem;
   overflow: hidden;
@@ -55,8 +55,8 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #080808;
-  background: linear-gradient(135deg, rgba(255, 246, 0, 0.35), rgba(255, 0, 92, 0.45));
-  box-shadow: inset 0 0 0 1px rgba(255, 0, 92, 0.28);
+  background-color: #fff600;
+  box-shadow: inset 0 0 0 1px rgba(255, 0, 92, 0.32);
 }
 
 .scroll-stack__titles p {
