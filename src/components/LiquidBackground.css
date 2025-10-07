@@ -4,7 +4,7 @@
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
-  background: #ffffff;
+  background: #000000;
   --pointer-x: 50%;
   --pointer-y: 50%;
 }
@@ -19,21 +19,21 @@
   filter: blur(100px);
   opacity: 0.8;
   transition: opacity 400ms ease;
-  mix-blend-mode: multiply;
+  mix-blend-mode: screen;
   animation: liquid-oscillate 18s ease-in-out infinite;
 }
 
 .liquid-ether__layer--a {
-  background: radial-gradient(circle at center, rgba(61, 218, 215, 0.32), transparent 65%);
+  background: radial-gradient(circle at center, rgba(255, 0, 92, 0.32), transparent 65%);
 }
 
 .liquid-ether__layer--b {
-  background: radial-gradient(circle at center, rgba(240, 135, 135, 0.25), transparent 60%);
+  background: radial-gradient(circle at center, rgba(255, 246, 0, 0.24), transparent 60%);
   animation-delay: -6s;
 }
 
 .liquid-ether__layer--c {
-  background: radial-gradient(circle at center, rgba(248, 250, 180, 0.22), transparent 62%);
+  background: radial-gradient(circle at center, rgba(247, 56, 89, 0.26), transparent 62%);
   animation-delay: -12s;
 }
 
