@@ -5,7 +5,7 @@
   justify-items: center;
   min-width: 14ch;
   font-weight: 600;
-  color: #0f2725;
+  color: var(--accent-butter);
   text-transform: lowercase;
 }
 
@@ -17,8 +17,8 @@
   width: 100%;
   padding: 0.2rem 0.6rem 0.3rem;
   border-radius: 0.75rem;
-  background: rgba(61, 218, 215, 0.14);
-  color: #0f2725;
+  background: rgba(255, 246, 0, 0.65);
+  color: #ffffff;
   opacity: 0;
   transform: translateY(12px) rotate(2deg);
   filter: blur(6px);
@@ -29,7 +29,7 @@
   opacity: 1;
   transform: translateY(0) rotate(0deg);
   filter: blur(0);
-  background: rgba(240, 135, 135, 0.2);
+  background: var(--accent-aqua);
 }
 
 @media (prefers-reduced-motion: reduce) {
